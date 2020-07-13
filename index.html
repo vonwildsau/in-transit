@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>my location</title>
+    <link rel="icon" href="https://cdn.glitch.com/099da295-a0b6-4fea-a579-b32ee3bf34c8%2FlogoBlackNoBackground.jpg?v=1575771049470">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" rel="stylesheet">
+    <script src="/script.js" defer></script>
+  </head>  
+  
+  <body>
+    
+    <div id="map-wrapper">
+      
+      <div id="title">in <span class="titleTwo"> a ford  </span> transit<span class="titleTwo"> connect</span></div>
+      <img id="logo" src="https://cdn.glitch.com/099da295-a0b6-4fea-a579-b32ee3bf34c8%2Flago.png?v=1575771248384">
+      
+      <div id="map"></div>
+      
+    </div>
+    
+        <script class="popup-template" type="x-tmpl-mustache">
+      <div style="font-family: 'arial'; margin-top: 15px; margin-right: 15px; color: black;">
+        
+        <div>
+        <b>{{name}}, {{state}}</b> <br>
+       {{date}} <br>
+        <img style="width: 150px;" src="{{photo}}">
+          </div>
+   
+      </div>
+    </script>
+    
+     <!-- Load Leaflet and Carto libraries -->
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://libs.cartocdn.com/carto.js/v4.1.11/carto.min.js"></script>
+    
+    <!-- import the Mustache library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/3.0.0/mustache.min.js"></script>
+     <script src="./script.js"></script>
+    
+  </body>
+</html>
