@@ -71,6 +71,22 @@ var linesLayer = new carto.layer.Layer(lineSource, lineStyle, {
   featureClickColumns: ['name']
 });
 
+// SECOND LINE LAYER
+
+var lineTwoSource = new carto.source.Dataset('nywa_lines_2');
+var lineTwoSource = new carto.source.SQL("SELECT * FROM vonwildsau.nywa_lines_2");
+
+var lineTwoStyle = new carto.style.CartoCSS(`
+#layer {
+  line-width: 2.5;
+  line-color: #ff9100;
+  line-opacity: 1;
+}
+`);
+
+var lineTwoLayer = new carto.layer.Layer(lineTwoSource, lineTwoStyle, {
+  featureClickColumns: ['name']
+});
 
 // ADDING A POPUP
 
@@ -91,7 +107,7 @@ pointsLayer.on('featureClicked', function (event) {
 
 
  // Add the data to the map as a layer
-client.addLayers([linesLayer, pointsLayer]);
+client.addLayers([linesLayer, lineTwoLayer, pointsLayer]);
 client
   .getLeafletLayer()
   .setZIndex(500)
